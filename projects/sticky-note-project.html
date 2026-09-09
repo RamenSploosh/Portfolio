@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Pokemon - Art Portfolio</title>
+    <title>The Sticky Note Project - Art Portfolio</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .project-header {
-            background: linear-gradient(135deg, #FFD93D 0%, #ffc107 100%);
-            color: #333;
+            background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);
+            color: white;
             padding: 4rem 2rem;
             text-align: center;
         }
@@ -24,11 +24,6 @@
         .project-section {
             margin-bottom: 3rem;
         }
-        .project-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
-        }
         .project-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -36,14 +31,8 @@
             margin-bottom: 2rem;
         }
         .gallery-item {
-            background-color: #f0f0f0;
             min-height: 120px;
             border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: #999;
             overflow: hidden;
         }
         .gallery-item img {
@@ -51,28 +40,38 @@
             height: auto;
             object-fit: contain;
             display: block;
-            border-radius: 8px;
+        }
+        .sticky-gallery .gallery-item:first-child {
+            grid-column: 1 / -1;
+            width: min(100%, 760px);
+            margin: 0 auto 1rem;
+        }
+        .sticky-gallery .gallery-caption {
+            margin: 0;
+            padding: 0.9rem 1rem 1rem;
+            color: #c9bfd5;
+            text-align: center;
+            line-height: 1.5;
+        }
+        .sticky-gallery .gallery-item:first-child img {
+            max-height: 440px;
+            object-fit: contain;
         }
         .back-btn {
             display: inline-block;
             margin-bottom: 2rem;
             padding: 0.75rem 1.5rem;
-            background-color: #3498db;
+            background-color: #7c3aed;
             color: white;
             border-radius: 5px;
             font-weight: 600;
-        }
-        .back-btn:hover {
-            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <h1>RamenSploosh</h1>
-            </div>
+            <div class="logo"><h1>RamenSploosh</h1></div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
@@ -81,26 +80,19 @@
         </nav>
     </header>
     <section class="project-header">
-        <h1>Daily Pokemon</h1>
-        <p>My daily Pokemon drawing project</p>
+        <h1>The Sticky Note Project</h1>
+        <p>An ongoing side project of mine, started back around 2022. Whenever I'm working at The Shadowbox Theatre selling tickets, reviewing plays, doing tech for a show, etc, I'll often doodle on stickey notes, and pop them onto the wall behind the box office. After however long its been, the little gallery there has really expanded, and I've done all sorts of fun experiments! Here's to many more years of small, square, doodles!</p>
     </section>
     <main class="project-content">
-        <a href="../index.html" class="back-btn">← Back to Home</a>
-        <section class="project-section">
-            <h2>About This Series</h2>
-            <p>Welcome to my Daily Pokemon project! I started this back around July 28th, 2025 and kept it going every day, for nearly a year, I took a break from it on June 19th, 2026. Its a challenge I gave myself to draw 1 Pokemon a day, each in a unique art style/medium. It was a fun way to challenge myself, and I plan on continuing it one day, untill I've drawn 'em all!</p>
-        </section>
+        <a href="../index.html" class="back-btn">Back to Home</a>
         <section class="project-section">
             <h2>Gallery</h2>
-            <div class="project-gallery" data-gallery-folder="daily-pokemon">
-            </div>
+            <div class="project-gallery sticky-gallery" data-gallery-folder="sticky notes" data-first-caption="Current progress of the grand sticky note wall :)"></div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2026 RamenSploosh. All rights reserved.</p>
-    </footer>
-    <script src="../js/script.js"></script>
+    <footer><p>&copy; 2026 RamenSploosh. All rights reserved.</p></footer>
     <script src="../js/gallery-data.js"></script>
+    <script src="../js/sticky-notes-data.js"></script>
     <script src="../js/gallery.js"></script>
 </body>
 </html>

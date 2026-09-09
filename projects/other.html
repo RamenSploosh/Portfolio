@@ -37,13 +37,21 @@
         }
         .gallery-item {
             background-color: #f0f0f0;
-            height: 250px;
+            min-height: 120px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
             color: #999;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
         }
         .back-btn {
             display: inline-block;
@@ -63,7 +71,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>My Art Portfolio</h1>
+                <h1>RamenSploosh</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
@@ -85,23 +93,15 @@
         </section>
         <section class="project-section">
             <h2>Gallery</h2>
-            <div class="project-gallery">
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
+            <div class="project-gallery" data-gallery-folder="other">
             </div>
-        </section>
-        <section class="project-section">
-            <h2>Process & Inspiration</h2>
-            <p>Share what you're experimenting with, any collaborations, or experimental techniques you're exploring. This is a great place to showcase your creative growth and willingness to try new things!</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 My Art Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 RamenSploosh. All rights reserved.</p>
     </footer>
     <script src="../js/script.js"></script>
+    <script src="../js/gallery-data.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
 </html>

@@ -35,15 +35,36 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
+        .project-gallery[data-gallery-custom="true"] {
+            display: block;
+        }
+        .illustration-group {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2.75rem;
+            margin-bottom: 6rem;
+            align-items: start;
+        }
+        .illustration-group .gallery-item {
+            min-height: 0;
+        }
         .gallery-item {
             background-color: #f0f0f0;
-            height: 250px;
+            min-height: 120px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
             color: #999;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
         }
         .back-btn {
             display: inline-block;
@@ -63,7 +84,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>My Art Portfolio</h1>
+                <h1>RamenSploosh</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
@@ -80,28 +101,103 @@
         <a href="../index.html" class="back-btn">← Back to Home</a>
         <section class="project-section">
             <h2>About This Series</h2>
-            <p>Welcome to my illustration portfolio! This collection features my digital and traditional artwork. From character design to concept art, here you'll find a diverse range of illustrative styles and subjects.</p>
-            <p>Add your project description, techniques, and details about your illustration work here.</p>
-        </section>
+            <p>Here's a bunch of stuff I've drawn, not super organized at the moment, but it should give an impression of the wide range of stuff I like to do!</p>
         <section class="project-section">
             <h2>Gallery</h2>
-            <div class="project-gallery">
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
+            <div class="project-gallery" data-gallery-folder="illustration" data-gallery-custom="true">
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="20210404_000329.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="20251120_195817.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="bloodborb.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="Carrion Release 2.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="femtanyl fanart.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="flayer sketch 1.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="I splash page.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="jinx 1.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="leg demon.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="R splash page.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="random stylized monster girl.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="top" data-gallery-file="Salli.jpg"></div>
+                </div>
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="hooters" data-gallery-file="BARTLEBY2.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hooters" data-gallery-file="CLOVE2.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hooters" data-gallery-file="rich clove and bartleby.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hooters" data-gallery-file="RICH2.png"></div>
+                </div>
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="bard.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="doomscroller.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="janitor.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="jester.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="narcoleptic.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="nerd.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="princess.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="castle" data-gallery-file="spooky.png"></div>
+                </div>
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="20210404_000331.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="20210404_001058.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="christmas hand2.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="ENA FISH render.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="heath comission.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="it me.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="kidpix-1731465112710.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="pikmeen.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="pillar guy.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="rat creature.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="XUNJAI DESPAIR.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mid" data-gallery-file="XUNJAI JOY.png"></div>
+                </div>
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="zommin" data-gallery-file="zommin blue.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="zommin" data-gallery-file="zommin flying.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="zommin" data-gallery-file="zommin purple.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="zommin" data-gallery-file="zommin red.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="zommin" data-gallery-file="zommin rock.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="zommin" data-gallery-file="zommin white.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="zommin" data-gallery-file="zommin yellow.png"></div>
+                </div>
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="post" data-gallery-file="highway man pillowman copy.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="post" data-gallery-file="pillow man close-up.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="post" data-gallery-file="pillow man core concept.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="post" data-gallery-file="The Last HappyMeal FINAL.jpg"></div>
+                </div>
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="ret" data-gallery-file="chowder ret.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ret" data-gallery-file="ded ret.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ret" data-gallery-file="ret.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ret" data-gallery-file="unDED RET.jpg"></div>
+                </div>
+                <div class="illustration-group">
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="aipom squad.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="alley crab.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="collective 01.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="FB_IMG_1487206014030.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="FB_IMG_1494994696596.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="freaky fish-man.JPG"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="IMG_20191020_170932.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="khezu.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="MG J custom copy.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="monster girl 01.1.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="my one amoung us fanart.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="nasty man.gif"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="night demon 01.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="oneyplays one wing remix art BIG.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="onion error copyyy.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="polteageist.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="screm.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="older" data-gallery-file="swolemato.jpg"></div>
+                </div>
             </div>
-        </section>
-        <section class="project-section">
-            <h2>Process & Inspiration</h2>
-            <p>Share details about your illustration techniques, software used (Photoshop, Procreate, etc.), and the inspiration behind your illustrations.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 My Art Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 RamenSploosh. All rights reserved.</p>
     </footer>
     <script src="../js/script.js"></script>
+    <script src="../js/gallery-data.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
 </html>

@@ -35,15 +35,43 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
+        .project-gallery[data-gallery-custom="true"] {
+            display: block;
+        }
+        .zine-group {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+            align-items: start;
+        }
+        .zine-group .gallery-item {
+            min-height: 0;
+        }
+        .zine-caption {
+            grid-column: 1 / -1;
+            margin-top: 0.5rem;
+            color: #c9bfd5;
+            font-size: 1rem;
+            line-height: 1.65;
+        }
         .gallery-item {
             background-color: #f0f0f0;
-            height: 250px;
+            min-height: 120px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
             color: #999;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
         }
         .back-btn {
             display: inline-block;
@@ -63,7 +91,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>My Art Portfolio</h1>
+                <h1>RamenSploosh</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
@@ -80,28 +108,56 @@
         <a href="../index.html" class="back-btn">← Back to Home</a>
         <section class="project-section">
             <h2>About This Series</h2>
-            <p>Welcome to my zines and comics collection! This section features my self-published work and comic projects. Each zine represents my creative vision and storytelling style through sequential art.</p>
-            <p>Add your project description, zine themes, and details about your self-publishing journey here.</p>
+            <p>Making zines has been a newer exploration for me, but I've been making as selling them lately at fairs and on comission at the Shadowbox theatre, and hopefully at other locations, soon.</p>
         </section>
         <section class="project-section">
             <h2>Gallery</h2>
-            <div class="project-gallery">
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
+            <div class="project-gallery" data-gallery-folder="zines" data-gallery-custom="true">
+                <section class="zine-group">
+                    <div class="gallery-item" data-gallery-subfolder="ramen 1" data-gallery-file="1A.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ramen 1" data-gallery-file="1B.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ramen 1" data-gallery-file="2A.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ramen 1" data-gallery-file="2B.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ramen 1" data-gallery-file="3A.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="ramen 1" data-gallery-file="3B.jpg"></div>
+                    <p class="zine-caption">As of creating this site, this is my most recenty finished zine. It's the first in a series of variety zines, that I want to fill with weird parody comics, stories from my life, poems, and just whatever else strikes my fancy! I've been selling them at fairs and such for 5$.</p>
+                </section>
+                <section class="zine-group">
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p1(1).png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p1.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p2(1).png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p2.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p3(1).png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p3.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p4(1).png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p4.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p5 B.png"></div>
+                    <div class="gallery-item" data-gallery-subfolder="infinite 1" data-gallery-file="p5.png"></div>
+                    <p class="zine-caption">This was my first zine, done as a project for a university collage class. I challenged myself to make a zine of various collages using ONLY one image as my source material, and see how weird I could get with it. I hope to continue this series soon, it was incredibly fun to make.</p>
+                </section>
+                <section class="zine-group">
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260420_140554.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260420_142211.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260420_142217.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260420_142223.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260422_123309.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260422_123442.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260508_221211.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260508_221237.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260508_221410.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260908_163640.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260908_163658.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="behind" data-gallery-file="20260908_163711.jpg"></div>
+                    <p class="zine-caption">Some behind the scenes looks at the zines in person! This is still a very new journey for me, and I'm excited to get many more of these done soon!</p>
+                </section>
             </div>
-        </section>
-        <section class="project-section">
-            <h2>Process & Inspiration</h2>
-            <p>Share details about your zine creation process, themes, and the stories behind your comics. Include information about printing, distribution, and where people can find your work.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 My Art Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 RamenSploosh. All rights reserved.</p>
     </footer>
     <script src="../js/script.js"></script>
+    <script src="../js/gallery-data.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
 </html>

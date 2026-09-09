@@ -13,8 +13,15 @@
             text-align: center;
         }
         .project-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            max-width: 1100px;
+            margin: 0 auto 1rem;
+            font-size: 1.75rem;
+            line-height: 1.35;
+        }
+        .project-top {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 2rem 0;
         }
         .project-content {
             max-width: 1000px;
@@ -35,15 +42,144 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
+        .project-gallery[data-gallery-custom="true"] {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .gallery-video-item {
+            width: 100%;
+            margin-bottom: 3.5rem;
+        }
+        .gallery-video-item video {
+            width: 100%;
+            max-height: 75vh;
+        }
+        .gallery-youtube-item {
+            width: min(82%, 820px);
+            margin: 0 auto 3.5rem;
+            background: #241b1d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gallery-youtube-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(80, 45, 45, 0.2);
+        }
+        .gallery-youtube-item a {
+            display: block;
+            color: white;
+        }
+        .gallery-youtube-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .gallery-youtube-label {
+            display: block;
+            padding: 1rem 1.5rem;
+            font-weight: 700;
+        }
+        .gallery-link-item {
+            position: relative;
+            width: 100%;
+            min-height: 0;
+            margin-bottom: 2rem;
+            padding: 0;
+            background: linear-gradient(135deg, #fff5f5, #ffe1e1);
+            border: 2px solid #f38181;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gallery-link-secondary {
+            background: linear-gradient(135deg, #fff9ed, #ffe8b8);
+            border-color: #e7a93b;
+        }
+        .gallery-link-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 22px rgba(80, 45, 45, 0.16);
+        }
+        .gallery-link-item a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.5rem 1.75rem;
+            color: #7f303d;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+        .gallery-link-item a::after {
+            content: "↗";
+            flex: 0 0 auto;
+            font-size: 1.5rem;
+        }
+        .gallery-link-secondary a {
+            color: #805b16;
+        }
+        .gallery-link-tertiary {
+            background: linear-gradient(135deg, #effbf4, #c9efd8);
+            border-color: #4fa875;
+        }
+        .gallery-link-tertiary a {
+            color: #276a47;
+        }
+        .gallery-link-fourth {
+            background: linear-gradient(135deg, #eef7ff, #c8e2f5);
+            border-color: #5594c4;
+        }
+        .gallery-link-fourth a {
+            color: #285d83;
+        }
+        .gallery-link-fifth {
+            background: linear-gradient(135deg, #f5f0ff, #ded0f4);
+            border-color: #8667b4;
+        }
+        .gallery-link-fifth a {
+            color: #594080;
+        }
+        .gallery-caption {
+            width: 100%;
+            padding: 0.75rem 1rem 1rem;
+            color: #555;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        .gallery-caption-item {
+            flex-direction: column;
+            width: 100%;
+            margin: 0 auto 3.5rem;
+            padding: 0;
+        }
+        .gallery-caption-item img {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .gallery-selfie-item {
+            width: 100%;
+            margin: 0 auto;
+        }
+        }
         .gallery-item {
             background-color: #f0f0f0;
-            height: 250px;
+            min-height: 120px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
             color: #999;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
         }
         .back-btn {
             display: inline-block;
@@ -63,7 +199,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>My Art Portfolio</h1>
+                <h1>RamenSploosh</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
@@ -72,36 +208,59 @@
             </ul>
         </nav>
     </header>
+    <div class="project-top">
+        <a href="../index.html" class="back-btn">← Back to Home</a>
+    </div>
     <section class="project-header">
-        <h1>Copracorn</h1>
-        <p>Copracorn series and related work</p>
+        <h1>Copracorn is a play that I wrote, which won the Windsor Essex Playwriting contest in 2024 and was officially put on the following summer, 2025. It ran for 3 weeks, across 8 performances at The ShadowBox Theatre in Windsor, Ontario.</h1>
+        <p>Copracorn</p>
     </section>
     <main class="project-content">
-        <a href="../index.html" class="back-btn">← Back to Home</a>
-        <section class="project-section">
-            <h2>About This Series</h2>
-            <p>Welcome to the Copracorn project! This is a dedicated collection showcasing my work in this unique series. Copracorn represents [add your description of what this series means to you].</p>
-            <p>Add your project description, the story behind Copracorn, and details about this special project here.</p>
-        </section>
         <section class="project-section">
             <h2>Gallery</h2>
-            <div class="project-gallery">
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
+            <div class="project-gallery" data-gallery-folder="copracorn" data-gallery-custom="true">
+                <div class="gallery-item" data-gallery-file="COPRACORN - a play by Kieran Potter (original cast 2025).mp4"></div>
+                <div class="gallery-youtube-item">
+                    <a href="https://www.youtube.com/watch?v=qyyD0fSWDAM&amp;t=1707s" target="_blank" rel="noopener noreferrer">
+                        <img src="https://img.youtube.com/vi/qyyD0fSWDAM/hqdefault.jpg" alt="Watch the Copracorn video on YouTube">
+                        <span class="gallery-youtube-label">Watch an interview with the creator of Copracorn</span>
+                    </a>
+                </div>
+                <div class="gallery-item gallery-link-item">
+                    <a href="https://519magazine.ca/2025/05/29/post-productions-delivers-udderly-absurd-magic-with-copracorn/" target="_blank" rel="noopener noreferrer">Read the 519 Magazine review</a>
+                </div>
+                <div class="gallery-item gallery-link-item gallery-link-secondary">
+                    <a href="https://519magazine.ca/2024/09/23/comedy-fantasy-wins-2024-windsor-essex-playwriting-contest-after-a-shocking-twist/" target="_blank" rel="noopener noreferrer">Read the 519 Magazine contest article</a>
+                </div>
+                <div class="gallery-item gallery-link-item gallery-link-tertiary">
+                    <a href="https://windsorite.ca/2024/10/local-playwriting-contest-creates-more-excitement-than-usual/" target="_blank" rel="noopener noreferrer">Read the Windsorite playwriting contest article</a>
+                </div>
+                <div class="gallery-item gallery-link-item gallery-link-fourth">
+                    <a href="https://windsorite.ca/2025/05/contest-winning-play-stirs-up-mischief-at-local-theatre/" target="_blank" rel="noopener noreferrer">Read the Windsorite theatre article</a>
+                </div>
+                <div class="gallery-item gallery-link-item gallery-link-fifth">
+                    <a href="https://bizxmagazine.com/copracorn-canadian-dark-comedy/" target="_blank" rel="noopener noreferrer">Read the Biz X Magazine article</a>
+                </div>
+                <figure class="gallery-item gallery-caption-item" data-gallery-file="Copracorn Poster.jpg">
+                    <figcaption class="gallery-caption">My proposed design for a poster</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-caption-item" data-gallery-file="ageeeeeeeah.jpg">
+                    <figcaption class="gallery-caption">The final poster design, created by Kris Simic</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-caption-item" data-gallery-file="copracorn shirt.png">
+                    <figcaption class="gallery-caption">The design I made for T-shirt merch</figcaption>
+                </figure>
+                <figure class="gallery-item gallery-caption-item" data-gallery-file="503475717_1159680689295022_6449744223295997938_n.jpg"></figure>
+                <figure class="gallery-item gallery-caption-item" data-gallery-file="504226611_1319189526681677_5791507895011359157_n.jpg"></figure>
+                <figure class="gallery-item gallery-selfie-item" data-gallery-file="copracorn bologna selfie final transparent.png"></figure>
             </div>
-        </section>
-        <section class="project-section">
-            <h2>Process & Inspiration</h2>
-            <p>Share details about what inspired the Copracorn series, your creative approach, and any special meaning or story behind this project.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 My Art Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 RamenSploosh. All rights reserved.</p>
     </footer>
     <script src="../js/script.js"></script>
+    <script src="../js/gallery-data.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
 </html>
