@@ -158,6 +158,55 @@ header {
     cursor: zoom-in;
 }
 
+.gallery-youtube-item {
+    min-width: 0;
+}
+
+.gallery-youtube-card {
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.gallery-youtube-card button {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gallery-youtube-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.gallery-youtube-card button:hover img,
+.gallery-youtube-card button:focus-visible img {
+    transform: scale(1.04);
+    filter: brightness(0.7);
+}
+
+.gallery-youtube-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.65rem 1rem;
+    border-radius: 999px;
+    background: rgba(220, 38, 38, 0.94);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
 .gallery-item {
     align-self: start;
 }
@@ -526,4 +575,26 @@ footer {
 .lightbox-close {
     background: #7c3aed;
     color: #ffffff;
+}
+
+.gallery-youtube-card iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.gallery-youtube-fallback {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    background: #20252b;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.gallery-youtube-fallback:hover,
+.gallery-youtube-fallback:focus-visible {
+    background: #d62828;
 }

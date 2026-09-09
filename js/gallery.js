@@ -4,6 +4,87 @@
     const rowHeight = 8;
     const galleryGap = 32;
 
+    const getYouTubeId = url => {
+        try {
+            const parsedUrl = new URL(url);
+            if (parsedUrl.hostname === 'youtu.be') {
+                return parsedUrl.pathname.slice(1);
+            }
+            return parsedUrl.searchParams.get('v');
+        } catch {
+            return null;
+        }
+    };
+
+    const bindYouTube = item => {
+        const url = item.dataset.youtubeUrl;
+        const videoId = getYouTubeId(url);
+        if (!videoId) {
+            return;
+        }
+
+        item.classList.add('gallery-youtube-card');
+        const link = document.createElement('button');
+        link.type = 'button';
+        link.setAttribute('aria-label', 'Play this video on the portfolio');
+
+        const thumbnail = document.createElement('img');
+        thumbnail.src = `https://img.youtube.com/vi/${encodeURIComponent(videoId)}/hqdefault.jpg`;
+        thumbnail.alt = 'Watch this animation on YouTube';
+        thumbnail.loading = 'lazy';
+
+        const play = document.createElement('span');
+        play.className = 'gallery-youtube-play';
+        play.setAttribute('aria-hidden', 'true');
+        play.textContent = 'Play on YouTube';
+
+        link.append(thumbnail, play);
+        link.addEventListener('click', () => {
+            const fallback = document.createElement('a');
+            fallback.className = 'gallery-youtube-fallback';
+            fallback.href = url;
+            fallback.target = '_blank';
+            fallback.rel = 'noopener noreferrer';
+            fallback.textContent = window.location.protocol === 'file:'
+                ? 'Open on YouTube (local preview)'
+                : 'Open on YouTube';
+
+            if (window.location.protocol === 'file:') {
+                item.replaceChildren(fallback);
+                return;
+            }
+
+            const embedUrl = new URL(`https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}`);
+            const startTime = new URL(url).searchParams.get('t');
+            if (startTime) {
+                embedUrl.searchParams.set('start', parseStartTime(startTime));
+            }
+            embedUrl.searchParams.set('autoplay', '1');
+            embedUrl.searchParams.set('origin', window.location.origin);
+
+            const player = document.createElement('iframe');
+            player.src = embedUrl;
+            player.title = 'YouTube video player';
+            player.referrerPolicy = 'strict-origin-when-cross-origin';
+            player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            player.allowFullscreen = true;
+
+            item.replaceChildren(player, fallback);
+        });
+        item.replaceChildren(link);
+    };
+
+    const parseStartTime = value => {
+        if (/^\d+$/.test(value)) {
+            return value;
+        }
+        const match = value.match(/(?:(\d+)h)?(?:(\d+)m)?(?:(\d+)s)?/);
+        if (!match) {
+            return '0';
+        }
+        return String((Number(match[1] || 0) * 3600) + (Number(match[2] || 0) * 60) + Number(match[3] || 0));
+    };
+
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox';
     lightbox.setAttribute('aria-hidden', 'true');
@@ -52,7 +133,7 @@
         const gap = parseFloat(computedStyle.rowGap) || galleryGap;
         const row = parseFloat(computedStyle.gridAutoRows) || rowHeight;
 
-        gallery.querySelectorAll('.gallery-item').forEach(item => {
+        gallery.querySelectorAll('.gallery-item, .gallery-youtube-item').forEach(item => {
             const media = item.querySelector('img, video');
             if (!media || !media.clientHeight) {
                 return;
@@ -106,6 +187,7 @@
             gallery.querySelectorAll('[data-gallery-file]').forEach(item => {
                 bindMedia(gallery, item, item.dataset.galleryFile);
             });
+            gallery.querySelectorAll('[data-youtube-url]').forEach(bindYouTube);
             sizeGalleryItems(gallery);
             window.addEventListener('resize', () => sizeGalleryItems(gallery));
             return;

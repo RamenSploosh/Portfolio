@@ -1,21 +1,8 @@
 ﻿window.portfolioMedia = {
     "animation":  [
-                      "Animation Reel 2020.mp4",
-                      "ENA Voice Claim - Fish, Insecure \u0026 Wormaniac.mp4",
-                      "If We Were Birds - Philomela\u0027s Trauma.mp4",
-                      "If We Were Birds - Procne\u0027s Dilema.mp4",
-                      "ONEYTROUSLE.mov",
-                      "PillowMan - The AppleMen.mp4",
-                      "PillowMan - The Little Green Pig.mp4",
-                      "PillowMan - The PillowMan.mp4",
-                      "PillowMan - The Three Gibbits.mp4",
-                      "PillowMan - Town On The River.mp4",
                       "REAL AMOGUS CAUGHT ON TAPE BEING KILLED VIOLENTLY BY A TRAIN _NOT CLICKBATE_.mp4",
-                      "woah metal pipe.mp4",
-                      "Zach\u0027s Medical Record - Oney Plays Animated.mp4"
                   ],
     "copracorn":  [
-                      "COPRACORN - a play by Kieran Potter (original cast 2025).mp4",
                       "copracorn bologna selfie final transparent.png",
                       "Copracorn Poster.jpg",
                       "copracorn shirt.png"
@@ -432,7 +419,6 @@
                          "rich clove and bartleby.jpg",
                          "RICH2.png",
                          "Salli.jpg",
-                         "screm.jpg",
                          "spooky.png",
                          "swolemato.jpg",
                          "The Last HappyMeal FINAL.jpg",
