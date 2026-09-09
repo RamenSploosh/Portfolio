@@ -178,6 +178,10 @@ header {
     cursor: pointer;
 }
 
+.gallery-youtube-card {
+    width: 100%;
+}
+
 .gallery-youtube-card img {
     display: block;
     width: 100%;
