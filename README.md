@@ -1,4 +1,4 @@
-# My Art Portfolio
+# RamenSploosh
 
 A beautiful, responsive portfolio website showcasing my art across multiple mediums and styles.
 
