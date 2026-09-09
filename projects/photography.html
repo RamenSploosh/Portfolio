@@ -35,15 +35,43 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
+        .project-gallery[data-gallery-custom="true"] {
+            display: block;
+        }
+        .photography-group {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 5rem;
+            align-items: start;
+        }
+        .photography-caption {
+            grid-column: 1 / -1;
+            margin: 0 0 0.5rem;
+            color: #c9bfd5;
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+        .photography-group .gallery-item {
+            min-height: 0;
+        }
         .gallery-item {
             background-color: #f0f0f0;
-            height: 250px;
+            min-height: 120px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
             color: #999;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
         }
         .back-btn {
             display: inline-block;
@@ -63,7 +91,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>My Art Portfolio</h1>
+                <h1>RamenSploosh</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
@@ -80,28 +108,68 @@
         <a href="../index.html" class="back-btn">← Back to Home</a>
         <section class="project-section">
             <h2>About This Series</h2>
-            <p>Welcome to my photography collection! This section features my photographic work and visual documentation. Whether it's portrait photography, landscape, or conceptual pieces, each photo tells a story.</p>
-            <p>Add details about your photography style, equipment you use, and the subjects or themes you focus on.</p>
+            <p>And here's a selection of my photographic work! Some school projects, some more personal work, all shot by me on various cameras.</p>
         </section>
         <section class="project-section">
             <h2>Gallery</h2>
-            <div class="project-gallery">
-                <div class="gallery-item">Add Photo</div>
-                <div class="gallery-item">Add Photo</div>
-                <div class="gallery-item">Add Photo</div>
-                <div class="gallery-item">Add Photo</div>
-                <div class="gallery-item">Add Photo</div>
-                <div class="gallery-item">Add Photo</div>
+            <div class="project-gallery" data-gallery-folder="photography" data-gallery-custom="true">
+                <section class="photography-group">
+                    <p class="photography-caption">My favourite picture I've taken of myself, as promotion for my play, Copracorn.</p>
+                    <div class="gallery-item" data-gallery-subfolder="selfie" data-gallery-file="IMG_9156 copy.jpg"></div>
+                </section>
+                <section class="photography-group">
+                    <p class="photography-caption">For this series i wanted to explore photographing hands, in the place of heads in a more standard shoto-shooting envireonment.</p>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hand.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hhhhhhhhhhhhjjjjjj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hhhhhhj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hhhhjjjjjjjhhhhhj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hhjjhjjhjhj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjhhhjhhjh.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjhjhjhj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjhhhhhhhhhhhhhh.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjhjhhhhh.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjhjhjhjhhjhj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjhjjhjhjh.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjjhhjjjjjjj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjjhjhjh.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjjjjjjhhhhhhhj.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="hands" data-gallery-file="hjjjjjjjjjjjjjh.jpg"></div>
+                </section>
+                <section class="photography-group">
+                    <p class="photography-caption">A photoshoot I did for a school project, using my friend Ewen in various masks as the subject matter, photgraphed around Windsor. It was intended to be a strange contridiction, a little bit absurd.</p>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="05.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="14.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="17.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="22.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="30.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="35.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="38.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="39.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="40.JPG"></div>
+                    <div class="gallery-item" data-gallery-subfolder="mask" data-gallery-file="41.JPG"></div>
+                </section>
+                <section class="photography-group">
+                    <p class="photography-caption">An older school proect for a digital photography and editting class, where I took many pictures of myself in various locations and spliced them together, to seem like bustling scenes.</p>
+                    <div class="gallery-item" data-gallery-subfolder="beyond" data-gallery-file="BEYOND PHOTOS 1.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="beyond" data-gallery-file="BEYOND PHOTOS 2.jpg"></div>
+                    <div class="gallery-item" data-gallery-subfolder="beyond" data-gallery-file="BEYOND PHOTOS.jpg"></div>
+                </section>
+                <section class="photography-group">
+                    <p class="photography-caption">And some other assorted photography</p>
+                    <div class="gallery-item" data-gallery-subfolder="vacay" data-gallery-file="IMG_4502.JPG"></div>
+                    <div class="gallery-item" data-gallery-subfolder="vacay" data-gallery-file="IMG_4587.JPG"></div>
+                    <div class="gallery-item" data-gallery-subfolder="vacay" data-gallery-file="IMG_4606.JPG"></div>
+                    <div class="gallery-item" data-gallery-subfolder="vacay" data-gallery-file="IMG_4739.JPG"></div>
+                    <div class="gallery-item" data-gallery-subfolder="vacay" data-gallery-file="IMG_8342.JPG"></div>
+                </section>
             </div>
-        </section>
-        <section class="project-section">
-            <h2>Process & Inspiration</h2>
-            <p>Share your photography techniques, editing approach, camera equipment, and the inspiration behind your photographic work. What draws you to particular subjects or themes?</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 My Art Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 RamenSploosh. All rights reserved.</p>
     </footer>
     <script src="../js/script.js"></script>
+    <script src="../js/gallery-data.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
 </html>

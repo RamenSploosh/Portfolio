@@ -35,15 +35,63 @@
             gap: 2rem;
             margin-bottom: 2rem;
         }
+        .project-gallery[data-gallery-custom="true"] {
+            display: block;
+        }
+        .graphic-design-group {
+            margin-bottom: 5rem;
+        }
+        .graphic-design-group h3 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            color: #c084fc;
+            border-bottom: 2px solid #7c3aed;
+            font-size: 1.6rem;
+        }
+        .graphic-design-group-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 2.5rem;
+            align-items: start;
+        }
+        .graphic-design-group .gallery-item {
+            min-height: 0;
+            background-color: #160f20;
+        }
+        .graphic-design-group .gallery-item img {
+            width: 100%;
+        }
+        .graphic-design-feature {
+            grid-column: 1 / -1;
+        }
+        .graphic-design-caption-item {
+            flex-direction: column;
+        }
+        .graphic-design-caption {
+            width: 100%;
+            padding: 0.9rem 1rem 1rem;
+            color: #c9bfd5;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            text-align: center;
+        }
         .gallery-item {
             background-color: #f0f0f0;
-            height: 250px;
+            min-height: 120px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
             color: #999;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            border-radius: 8px;
         }
         .back-btn {
             display: inline-block;
@@ -63,7 +111,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <h1>My Art Portfolio</h1>
+                <h1>RamenSploosh</h1>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html">Home</a></li>
@@ -80,28 +128,74 @@
         <a href="../index.html" class="back-btn">← Back to Home</a>
         <section class="project-section">
             <h2>About This Series</h2>
-            <p>Welcome to my graphic design portfolio! This collection showcases my branding work, typographic designs, and various design projects. From logo design to poster layouts, each piece demonstrates my approach to visual communication.</p>
-            <p>Add details about your design philosophy, design software you use, and the types of design work you specialize in.</p>
+            <p>Welcome to my graphic design portfolio! Graphic Design isn't as much of a passion for me as illustraion is, but it's definitely something I like to dabble in.</p>
         </section>
         <section class="project-section">
             <h2>Gallery</h2>
-            <div class="project-gallery">
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
-                <div class="gallery-item">Add Image</div>
+            <div class="project-gallery" data-gallery-folder="graphic-design" data-gallery-custom="true">
+                <section class="graphic-design-group">
+                    <h3>Personal</h3>
+                    <div class="graphic-design-group-grid">
+                        <div class="gallery-item graphic-design-caption-item" data-gallery-subfolder="personal" data-gallery-file="MOTHEW transparent.png">
+                            <span class="graphic-design-caption">This is Motthew, my newest logo. He's a baby moth man</span>
+                        </div>
+                        <div class="gallery-item graphic-design-caption-item" data-gallery-subfolder="personal" data-gallery-file="2019 ramensploosh logo.png">
+                            <span class="graphic-design-caption">This was my logo for a while, inspired by general ramen noodle packaging</span>
+                        </div>
+                        <div class="gallery-item graphic-design-feature" data-gallery-subfolder="personal" data-gallery-file="twitch banner bw.png"></div>
+                    </div>
+                </section>
+                <section class="graphic-design-group">
+                    <h3>Post Productions Windsor</h3>
+                    <div class="graphic-design-group-grid">
+                        <div class="gallery-item graphic-design-feature graphic-design-caption-item" data-gallery-subfolder="other post" data-gallery-file="shadowbox.jpg">
+                            <span class="graphic-design-caption">Final design for the logo for The Shadowbox Theatre, the home of PostProductions Windsor</span>
+                        </div>
+                        <div class="gallery-item graphic-design-caption-item" data-gallery-subfolder="other post" data-gallery-file="black shirt.jpg">
+                            <span class="graphic-design-caption">A T-shirt merch design I did for Postproductions' performance of The Pillowman</span>
+                        </div>
+                        <div class="gallery-item" data-gallery-subfolder="season posters" data-gallery-file="2018 season poster.JPG"></div>
+                        <div class="gallery-item" data-gallery-subfolder="season posters" data-gallery-file="2019 season poster copy3.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="season posters" data-gallery-file="2020 season poster finale.jpg"></div>
+                        <div class="gallery-item" data-gallery-subfolder="season posters" data-gallery-file="FINAL 2021 POSTER DESIGN.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="season posters" data-gallery-file="improv 101 last1.jpg"></div>
+                    </div>
+                </section>
+                <section class="graphic-design-group">
+                    <h3>Card Board Game Night</h3>
+                    <div class="graphic-design-group-grid">
+                        <div class="gallery-item graphic-design-feature graphic-design-caption-item" data-gallery-subfolder="card board game night" data-gallery-file="Card Board Game Night logo - circle colour fill.png">
+                            <span class="graphic-design-caption">Final design for Ian Reutan's Cardboard Game Night; a monthly event held at The Shadowbox Theatre</span>
+                        </div>
+                        <div class="gallery-item" data-gallery-subfolder="card board game night" data-gallery-file="old logo 1.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="card board game night" data-gallery-file="old logo 2.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="card board game night" data-gallery-file="old logo 3.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="card board game night" data-gallery-file="old logo 5.png"></div>
+                    </div>
+                </section>
+                <section class="graphic-design-group">
+                    <h3>Other Commissions</h3>
+                    <div class="graphic-design-group-grid">
+                        <div class="gallery-item" data-gallery-subfolder="various" data-gallery-file="purple ammonite left1.jpg"></div>
+                        <div class="gallery-item" data-gallery-subfolder="various" data-gallery-file="purple ammonite mid2.jpg"></div>
+                        <div class="gallery-item" data-gallery-subfolder="various" data-gallery-file="health bloom.jpg"></div>
+                        <div class="gallery-item" data-gallery-subfolder="various" data-gallery-file="PIKMIN SUMMER CAMP.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="various" data-gallery-file="Untitled-3.jpg"></div>
+                        <div class="gallery-item" data-gallery-subfolder="shatter" data-gallery-file="BOO PARK.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="shatter" data-gallery-file="JOSHI PARK.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="shatter" data-gallery-file="SUPER MARIO WORLDERS 2SERS.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="shatter" data-gallery-file="SUPER PETEY BROS JR.png"></div>
+                        <div class="gallery-item" data-gallery-subfolder="shatter" data-gallery-file="shatters amiibo banner drop shadow2.png"></div>
+                    </div>
+                </section>
             </div>
-        </section>
-        <section class="project-section">
-            <h2>Process & Inspiration</h2>
-            <p>Share your design process, approach to branding, and the inspiration behind your design work. Include information about your design tools and what makes your design aesthetic unique.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 My Art Portfolio. All rights reserved.</p>
+        <p>&copy; 2026 RamenSploosh. All rights reserved.</p>
     </footer>
     <script src="../js/script.js"></script>
+    <script src="../js/gallery-data.js"></script>
+    <script src="../js/gallery.js"></script>
 </body>
 </html>
